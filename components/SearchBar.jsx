@@ -2,7 +2,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 export const SearchBar = () => {
   return (
-    <div className="hidden sm:flex flex-grow items-center space-x-2 ">
+    <div className="hidden md:flex flex-grow items-center space-x-2 ">
       <input
         className="flex flex-grow  h-10 rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
         type="email"

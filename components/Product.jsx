@@ -1,4 +1,4 @@
-export const ProductsThree = () => {
+export const Product = () => {
   return (
     <section className="text-gray-600 dark:text-gray-900 body-font">
       <div className="container px-5 py-24 mx-auto">

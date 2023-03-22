@@ -1,13 +1,15 @@
 import Head from "next/head";
+import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
-import { ProductsThree } from "../components/ProductsThree";
+import { Product } from "../components/Product";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
     <div>
       <Navbar />
-      <ProductsThree />
+      <Product />
+      <Footer />
     </div>
   );
 }
