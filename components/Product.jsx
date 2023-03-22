@@ -1,86 +1,55 @@
-export const Product = () => {
+export const Product = ({ id, title, price, description, category, image }) => {
   return (
-    <section className="text-gray-600 dark:text-gray-900 body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-wrap -m-4">
-          {products.map((product) => (
-            <div key={product.title} className="lg:w-1/4 sm:w-1/2 p-4 w-full">
-              <a
-                className="block relative h-48 rounded overflow-hidden"
-                href=""
-              >
-                <img
-                  alt={product.title}
-                  className="object-contain object-center w-full h-full block"
-                  src={product.image}
-                />
-              </a>
-              <div className="mt-4">
-                <h3 className="text-gray-500 dark:text-gray-300 text-xs tracking-widest title-font mb-1">
-                  {product.brand}
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium dark:text-white">
-                  {product.title}
-                </h2>
-                <p className="mt-1 dark:text-gray-300">{product.price}</p>
-              </div>
-            </div>
-          ))}
+    <div className="p-8 dark:bg-gray-900 flex flex-col ">
+      <a
+        href="#"
+        className="group relative block overflow-hidden border dark:bg-gray-500 border-gray-100 dark:border-gray-400"
+      >
+        <button className="absolute right-4 top-4 z-10 rounded-full dark:text-gray-300 bg-transparent  p-1.5 text-gray-900 transition hover:text-gray-900/75">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+            />
+          </svg>
+        </button>
+
+        <img
+          src={image}
+          alt=""
+          className="py-4 h-64 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72"
+        />
+
+        <div className="relative border-t dark:bg-gray-700 border-gray-100 dark:border-gray-400 bg-white p-6">
+          <span className="whitespace-nowrap bg-indigo-500 text-white px-3 py-1.5 text-xs font-medium">
+            New
+          </span>
+
+          <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white truncate">
+            {title}
+          </h3>
+
+          <p className="mt-1.5 text-sm text-gray-700 dark:text-gray-200">
+            ₹{Math.floor(price * 70)}
+          </p>
+
+          <form className="mt-4">
+            <button className="w-full rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500">
+              Add to Cart
+            </button>
+          </form>
         </div>
-      </div>
-    </section>
+      </a>
+    </div>
   );
 };
 
-const products = [
-  {
-    title: "SAMSUNG Crystal 4K Pro 146 cm (58 inch)",
-    price: "₹48,490",
-    image:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imageq5ekyzg27wa.jpeg?q=70",
-    brand: "SAMSUNG",
-  },
-  {
-    title: "SENS Pikaso 140 cm (55 inch) Ultra HD (4K)",
-    price: "₹30,999",
-    image:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imagndaashuba2wn.jpeg?q=70",
-    brand: "SENS",
-  },
-  {
-    title: "Hisense 164 cm (65 inch) Ultra HD (4K)",
-    price: "₹59,999",
-    image:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imagkj24hzdfxhec.jpeg?q=70",
-    brand: "Hisense",
-  },
-  {
-    title: "iFFALCON by TCL U62 164 cm (65 inch)",
-    price: "₹49,999",
-    image:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imaghepnfyhyqzqk.jpeg?q=70",
-    brand: "iFFALCON",
-  },
-  {
-    title: "Sansui 165 cm (65 inch) QLED Ultra HD (4K)",
-    price: "₹56,990",
-    image:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imaghkx9qgvuvshg.jpeg?q=70",
-    brand: "Sansui",
-  },
-  {
-    title: "LG UQ7500 139 cm (55 inch) Ultra HD (4K)",
-    price: "₹48,490",
-    image:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/-original-imagg24zpbk2h7tx.jpeg?q=70",
-    brand: "LG",
-  },
-  {
-    title: "OnePlus Y1S Pro 138 cm (55 inch) Ultra HD (4K)",
-    price: "₹39,999",
-    image:
-      "https://dev-ui-image-assets.s3.ap-south-1.amazonaws.com/products/55ud2a00-55-y1s-pro-oneplus-original-imagk9wcydhe7pbv.jpeg?q=70",
-    brand: "OnePlus",
-  },
-];
-// ProductsThree.displayName = "ProductsThree";
+// ProductsTwo.displayName = "ProductsTwo";
