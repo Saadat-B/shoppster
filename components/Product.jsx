@@ -1,3 +1,5 @@
+import { Router } from "next/router";
+
 export const Product = ({ id, title, price, description, category, image }) => {
   return (
     <div className="p-8 dark:bg-gray-900 flex flex-col ">
@@ -21,12 +23,13 @@ export const Product = ({ id, title, price, description, category, image }) => {
             />
           </svg>
         </button>
-
-        <img
-          src={image}
-          alt=""
-          className="py-4 h-64 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72"
-        />
+        <a href="">
+          <img
+            src={image}
+            alt=""
+            className="py-4 h-64 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72"
+          />
+        </a>
 
         <div className="relative border-t dark:bg-gray-700 border-gray-100 dark:border-gray-400 bg-white p-6">
           <span className="whitespace-nowrap bg-indigo-500 text-white px-3 py-1.5 text-xs font-medium">
