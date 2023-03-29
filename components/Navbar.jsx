@@ -1,6 +1,7 @@
 import { SearchBar } from "./SearchBar";
-
+import { useSession, signIn, signOut } from "next-auth/react";
 export const Navbar = () => {
+  const { data: session } = useSession();
   return (
     <div>
       <nav className="relative px-8 py-4 flex  items-center justify-between border-y border-gray-400 dark:border-gray-700 gap-32">
@@ -19,9 +20,32 @@ export const Navbar = () => {
         </a>
 
         <SearchBar />
-        <div class="space-x-2  lg:block">
-          <button class="rounded-md border border-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-indigo-600 hover:text-white hover:bg-indigo-600">
-            Login
+
+        {session && (
+          <div class="hidden lg:block">
+            <div class="flex items-center space-x-2">
+              <img
+                class="inline-block w-12 h-12 rounded-full"
+                src={session.user.image}
+                alt="John Doe"
+              />
+              <span class="flex flex-col">
+                <span class="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  {session.user.name}
+                </span>
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400 cursor-pointer">
+                  View Profile
+                </span>
+              </span>
+            </div>
+          </div>
+        )}
+        <div className="space-x-2  lg:block">
+          <button
+            className="rounded-md border border-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-indigo-600 hover:text-white hover:bg-indigo-600"
+            onClick={session ? signOut : signIn}
+          >
+            {session ? "Logout" : "Login"}
           </button>
         </div>
       </nav>

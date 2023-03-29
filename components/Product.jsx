@@ -1,4 +1,4 @@
-import { Router } from "next/router";
+// import { Router } from "next/router";
 
 export const Product = ({ id, title, price, description, category, image }) => {
   return (
