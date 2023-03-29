@@ -1,12 +1,14 @@
 // import { Router } from "next/router";
 
+import Link from "next/link";
+
 export const Product = ({ id, title, price, description, category, image }) => {
   return (
-    <div className="p-8 dark:bg-gray-900 flex flex-col ">
-      <a
-        href="#"
-        className="group relative block overflow-hidden border dark:bg-gray-500 border-gray-100 dark:border-gray-400"
-      >
+    <Link
+      href={`/products/${id}`}
+      className="p-8 dark:bg-gray-900 flex flex-col "
+    >
+      <div className="group relative block overflow-hidden border dark:bg-gray-500 border-gray-100 dark:border-gray-400">
         <button className="absolute right-4 top-4 z-10 rounded-full dark:text-gray-300 bg-transparent  p-1.5 text-gray-900 transition hover:text-gray-900/75">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,13 +25,13 @@ export const Product = ({ id, title, price, description, category, image }) => {
             />
           </svg>
         </button>
-        <a href="">
+        <div>
           <img
             src={image}
             alt=""
             className="py-4 h-64 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72"
           />
-        </a>
+        </div>
 
         <div className="relative border-t dark:bg-gray-700 border-gray-100 dark:border-gray-400 bg-white p-6">
           <span className="whitespace-nowrap bg-indigo-500 text-white px-3 py-1.5 text-xs font-medium">
@@ -45,13 +47,19 @@ export const Product = ({ id, title, price, description, category, image }) => {
           </p>
 
           <form className="mt-4">
-            <button className="w-full rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                console.log("clicked");
+              }}
+              className="w-full rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500"
+            >
               Add to Cart
             </button>
           </form>
         </div>
-      </a>
-    </div>
+      </div>
+    </Link>
   );
 };
 

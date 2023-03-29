@@ -22,18 +22,18 @@ export const Navbar = () => {
         <SearchBar />
 
         {session && (
-          <div class="hidden lg:block">
-            <div class="flex items-center space-x-2">
+          <div className="hidden lg:block">
+            <div className="flex items-center space-x-2">
               <img
-                class="inline-block w-12 h-12 rounded-full"
+                className="inline-block w-12 h-12 rounded-full"
                 src={session.user.image}
                 alt="John Doe"
               />
-              <span class="flex flex-col">
-                <span class="text-sm font-medium text-gray-900 dark:text-gray-100">
+              <span className="flex flex-col">
+                <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {session.user.name}
                 </span>
-                <span class="text-sm font-medium text-gray-500 dark:text-gray-400 cursor-pointer">
+                <span className="text-sm font-medium text-gray-500 dark:text-gray-400 cursor-pointer">
                   View Profile
                 </span>
               </span>
