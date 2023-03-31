@@ -1,4 +1,12 @@
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice";
+
 export const ProductOverview = ({ product }) => {
+  const dispatch = useDispatch();
+  const addItemToCart = () => {
+    const item = product;
+    dispatch(addToCart(item));
+  };
   return (
     <section className="text-gray-600 dark:bg-gray-900 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
@@ -116,7 +124,10 @@ export const ProductOverview = ({ product }) => {
               <span className="title-font font-medium text-2xl text-gray-900 dark:text-white">
                 ₹{Math.floor(product.price * 70)}
               </span>
-              <button className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500">
+              <button
+                onClick={addItemToCart}
+                className="ml-auto rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500"
+              >
                 Add To Cart
               </button>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">

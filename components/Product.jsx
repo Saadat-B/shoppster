@@ -1,8 +1,23 @@
 // import { Router } from "next/router";
 
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice";
 
 export const Product = ({ id, title, price, description, category, image }) => {
+  const dispatch = useDispatch();
+
+  const addItemToCart = () => {
+    const item = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+    };
+    dispatch(addToCart(item));
+  };
   return (
     <Link
       href={`/products/${id}`}
@@ -50,6 +65,7 @@ export const Product = ({ id, title, price, description, category, image }) => {
             <button
               onClick={(e) => {
                 e.preventDefault();
+                addItemToCart();
                 console.log("clicked");
               }}
               className="w-full rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500"
