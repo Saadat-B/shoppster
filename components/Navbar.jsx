@@ -7,7 +7,7 @@ export const Navbar = () => {
       <nav className="relative px-8 py-4 flex  items-center justify-between border-y border-gray-400 dark:border-gray-700 gap-32">
         <a
           className="text-3xl font-bold leading-none flex items-center space-x-4"
-          href="#"
+          href="/"
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/1656/1656799.png"

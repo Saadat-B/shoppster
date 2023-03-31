@@ -29,7 +29,7 @@ export const Product = ({ id, title, price, description, category, image }) => {
           <img
             src={image}
             alt=""
-            className="py-4 h-64 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72"
+            className="py-4 h-64 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72 cursor-pointer"
           />
         </div>
 

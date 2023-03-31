@@ -1,4 +1,6 @@
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { Restricted } from "../components/Restricted";
 
 const admin = () => {
   const [id, setId] = useState("");
@@ -9,7 +11,7 @@ const admin = () => {
   const [image, setImage] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
-
+  const { data: session } = useSession();
   useEffect(() => {
     let timer;
     if (formSubmitted) {
@@ -46,7 +48,9 @@ const admin = () => {
       console.error("Form submission failed.");
     }
   };
-
+  if (!session || session.user.email !== "saadatbadgujar@gmail.com") {
+    return <Restricted />;
+  }
   return (
     <div className="relative bg-gradient-to-r from-pink-300 via-red-300 to-yellow-300 p-1">
       <div className="flex items-center justify-center my-4">

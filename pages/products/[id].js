@@ -1,20 +1,12 @@
 import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
-import { Product } from "../../components/Product";
+import { ProductOverview } from "../../components/ProductOverview";
 
 const productPage = ({ product }) => {
   return (
     <div>
       <Navbar />
-      <Product
-        key={product.id}
-        id={product.id}
-        title={product.title}
-        price={product.price}
-        description={product.description}
-        category={product.category}
-        image={product.image}
-      />
+      <ProductOverview product={product} />
       <Footer />
     </div>
   );
