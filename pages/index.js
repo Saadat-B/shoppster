@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
   // );
   // console.log(fakestore);
   const products = await fetch(
-    "http://localhost:3000/api/product/getAllProducts"
+    "http://https://shoppster.vercel.app/api/product/getAllProducts"
   ).then((res) => res.json());
   // console.log(products.product);
   return {
