@@ -18,7 +18,7 @@ export async function getServerSideProps(context) {
   const { id } = params;
   //   console.log(id);
   const products = await fetch(
-    "http://localhost:3000/api/product/getAllProducts"
+    "https://shoppster-bx97ji1ky-saadat-b.vercel.app/api/product/getAllProducts"
   ).then((res) => res.json());
   const product = products.product.find((obj) => obj.id === parseInt(id));
 
