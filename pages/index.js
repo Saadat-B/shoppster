@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
   // );
   // console.log(fakestore);
   const products = await fetch(
-    "http://https://shoppster.vercel.app/api/product/getAllProducts"
+    "https://shoppster-bx97ji1ky-saadat-b.vercel.app/api/product/getAllProducts"
   ).then((res) => res.json());
   // console.log(products.product);
   return {
