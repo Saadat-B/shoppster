@@ -7,6 +7,9 @@ import styles from "../styles/Home.module.css";
 export default function Home({ products }) {
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Navbar />
       <ProductFeed products={products} />
       <Footer />
